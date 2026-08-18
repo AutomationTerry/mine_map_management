@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines</title>
+    <meta name="description" content="Official project page for Dual-Gated Semantic Graph Network, a framework for life-cycle map management in underground mines.">
+    <meta name="theme-color" content="#2563eb">
+
+    <!-- ✏️ 可选：站点图标（当前为地图主题 emoji，可替换为自己的 logo） -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🗺️</text></svg>">
+
+    <!-- ✏️ 可选：OG / Twitter 分享卡片信息（部署后可填写 og:image 等） -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines">
+    <meta property="og:description" content="Official project page for Dual-Gated Semantic Graph Network.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- ════════════════ HERO ════════════════ -->
+    <div class="hero">
+        <div class="container">
+            <div class="hero-title-row">
+                <h1>
+                    <span class="hero-title-line hero-title-line--lead">
+                        <span class="brand-mark" aria-hidden="true">
+                            <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 10 L17 6 L31 11 L42 7 V38 L31 42 L17 37 L6 41 Z"
+                                      stroke="currentColor" stroke-width="2" stroke-linejoin="round" opacity="0.4"/>
+                                <path d="M17 6 V37 M31 11 V42"
+                                      stroke="currentColor" stroke-width="2" opacity="0.4"/>
+                                <path d="M24 13 C19.6 13 16 16.6 16 21 C16 26.5 24 33 24 33 C24 33 32 26.5 32 21 C32 16.6 28.4 13 24 13 Z"
+                                      fill="currentColor" opacity="0.9"/>
+                                <circle cx="24" cy="21" r="2" fill="#ffffff"/>
+                            </svg>
+                        </span>
+                        <span><span class="highlight">Dual-Gated Semantic Graph Network</span></span>
+                    </span>
+                    <span class="hero-title-line">for Life-Cycle Map Management in Underground Mines</span>
+                </h1>
+            </div>
+
+            <!-- ✏️ 会议 / 期刊名称（如 "CVPR 2026 Highlight"）；暂不需要可删除本行 -->
+            <p class="venue">Conference / Journal</p>
+
+            <div class="hero-meta">
+                <!-- ✏️ 填写作者信息（支持多行）。上标 <sup>1</sup> 对应下方机构编号。
+                     带主页链接的写法：
+                     <span class="author-block"><a href="作者主页链接">作者名</a><sup>1</sup></span> -->
+                <div class="authors" aria-label="Authors">
+                    <div class="authors-row">
+                        <span class="author-block">Author One<sup>1</sup></span>
+                        <span class="author-block">Author Two<sup>2</sup></span>
+                        <span class="author-block">Author Three<sup>1</sup></span>
+                    </div>
+                </div>
+
+                <!-- ✏️ 机构列表，编号与作者上标一一对应 -->
+                <div class="affiliations">
+                    <div class="affiliation-row">
+                        <span class="affiliation-block"><sup>1</sup>Affiliation One</span>
+                        <span class="affiliation-block"><sup>2</sup>Affiliation Two</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ✏️ 把 href="#" 换成真实链接；按钮文字可自由改成 Paper / Code / Project Page 等 -->
+            <div class="links">
+                <a href="#" class="primary-btn" target="_blank" rel="noreferrer"><i class="fas fa-file-lines"></i> Paper</a>
+                <a href="#" class="outline-btn" target="_blank" rel="noreferrer"><i class="fab fa-github"></i> Code</a>
+                <a href="#" class="outline-btn" target="_blank" rel="noreferrer"><i class="fas fa-globe"></i> Project Page</a>
+            </div>
+
+            <!-- ✏️ 一句话总结（论文核心卖点） -->
+            <p class="hero-tagline">
+                Builds, updates, and prunes the underground map in real time as mining trucks operate<br>
+                &mdash; <span class="highlight">without interrupting normal production</span>.
+            </p>
+        </div>
+    </div>
+
+    <!-- ════════════════ ABSTRACT ════════════════ -->
+    <section>
+        <div class="container">
+            <h2 class="section-title">Abstract</h2>
+
+            <!-- ✏️ 摘要配图（teaser） -->
+            <figure class="figure figure--wide">
+                <img src="abstract.png" alt="Overview of the proposed framework" loading="lazy">
+            </figure>
+
+            <p class="abstract-text">
+                Underground mines lack absolute positioning (GPS), so autonomous mining trucks rely on
+                high-precision, continuously updatable maps. Yet mine roadways are weakly textured, structurally
+                repetitive, and geometrically sparse, making point-cloud registration prone to pose drift and
+                misalignment; meanwhile, the cyclic &ldquo;extraction-backfilling&rdquo; routine continuously reshapes
+                roadways, demanding that invalid or backfilled regions be identified and pruned over time. Existing
+                3D mapping methods target static or short-term environments and require production shutdowns during
+                map acquisition. We instead propose a graph-based framework that <strong>builds, updates, and prunes the
+                map in real time as mining trucks operate &mdash; without interrupting normal production</strong>. For
+                short-term updates, Semantic-Guided Gaussian Registration (SGGR) achieves stable incremental mapping;
+                for long-term maintenance, a Dual-Gated Graph Network (DGGN) detects backfilled roadways and
+                dynamically prunes invalid regions. Experiments demonstrate significantly improved registration
+                stability and long-term consistency in complex, dynamic mining scenarios.
+            </p>
+        </div>
+    </section>
+
+    <!-- ════════════════ MAP EVOLUTION ════════════════ -->
+    <section id="evolution" style="background: var(--bg-alt);">
+        <div class="container">
+            <h2 class="section-title">Life-Cycle Map Evolution</h2>
+
+            <!-- ✏️ 地图演化演示视频 -->
+            <div class="video-wrapper">
+                <video autoplay controls muted loop playsinline preload="auto">
+                    <source src="part-1_map_evolution_h264.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+
+            <!-- 描述块：与下方图片完全分离，先说明演化过程 -->
+            <p class="evolution-copy">
+                The map evolves through five phases of the entire mining area&rsquo;s life cycle. Slice&nbsp;1
+                progresses from mining through backfilling to a fully backfilled state, while Slice&nbsp;2 keeps
+                developing and then begins mining &mdash; illustrating how the framework updates and prunes the map in
+                real time.
+            </p>
+
+            <div class="phase-strip">
+                <figure class="phase-card">
+                    <img src="phase-1.png" alt="Phase 1: Slice 1 mining, Slice 2 developing" loading="lazy">
+                    <figcaption>
+                        <span class="phase-title">Phase 1</span>
+                        <span class="phase-subtitle">Slice 1 &middot; Mining<br>Slice 2 &middot; Developing</span>
+                    </figcaption>
+                </figure>
+                <figure class="phase-card">
+                    <img src="phase-2.png" alt="Phase 2: Slice 1 backfilling, Slice 2 developing" loading="lazy">
+                    <figcaption>
+                        <span class="phase-title">Phase 2</span>
+                        <span class="phase-subtitle">Slice 1 &middot; Backfilling<br>Slice 2 &middot; Developing</span>
+                    </figcaption>
+                </figure>
+                <figure class="phase-card">
+                    <img src="phase-3.png" alt="Phase 3: Slice 1 partial backfill, Slice 2 developing" loading="lazy">
+                    <figcaption>
+                        <span class="phase-title">Phase 3</span>
+                        <span class="phase-subtitle">Slice 1 &middot; Partial backfill<br>Slice 2 &middot; Developing</span>
+                    </figcaption>
+                </figure>
+                <figure class="phase-card">
+                    <img src="phase-4.png" alt="Phase 4: Slice 1 mostly backfill, Slice 2 mining" loading="lazy">
+                    <figcaption>
+                        <span class="phase-title">Phase 4</span>
+                        <span class="phase-subtitle">Slice 1 &middot; Mostly backfill<br>Slice 2 &middot; Mining</span>
+                    </figcaption>
+                </figure>
+                <figure class="phase-card">
+                    <img src="phase-5.png" alt="Phase 5: Slice 1 backfilled, Slice 2 mining" loading="lazy">
+                    <figcaption>
+                        <span class="phase-title">Phase 5</span>
+                        <span class="phase-subtitle">Slice 1 &middot; Backfilled<br>Slice 2 &middot; Mining</span>
+                    </figcaption>
+                </figure>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ DATASET / WORKFLOW ════════════════ -->
+    <section id="dataset">
+        <div class="container">
+            <h2 class="section-title">Dataset</h2>
+            <p class="section-subtitle">
+                From the cyclic underground mining workflow to a long-sequence point cloud dataset capturing the
+                full roadway life cycle.
+            </p>
+
+            <div class="method-copy">
+                <p>
+                    Underground roadways evolve continuously: while core infrastructure such as ore passes stays
+                    fixed, extraction areas expand, migrate, and are decommissioned. Multiple roadways are excavated
+                    concurrently, and each follows a roughly two-week life cycle from charging, blasting, mucking,
+                    and haulage to final backfilling &mdash; producing frequent structural additions, deformations, and
+                    disappearances in the global map.
+                </p>
+            </div>
+
+            <figure class="figure figure--eighty">
+                <img src="mining-workflow.png" alt="Underground mining workflow and LiDAR-based data acquisition" loading="lazy">
+                <figcaption class="figure-caption">
+                    The underground mining workflow and LiDAR-based data acquisition.
+                </figcaption>
+            </figure>
+
+            <div class="method-copy">
+                <p>
+                    LiDAR sensors mounted on mining trucks (load-haul-dump vehicles, drilling rigs, and scaling rigs)
+                    collect ROS bag sequences; LIO-SAM performs real-time mapping to generate discrete 3D point
+                    clouds, which are uploaded to edge servers. We construct a long-sequence dataset at the 1300
+                    sublevel IV stope of the Jinchuan Nickel-Cobalt No.&nbsp;3 Mining Area over five months.
+                </p>
+            </div>
+
+            <figure class="figure figure--tall">
+                <img src="roadway-lifecycle.png" alt="Life-cycle evolution of a single roadway from excavation to backfilling" loading="lazy">
+                <figcaption class="figure-caption">
+                    The life-cycle evolution of a single roadway &mdash; from excavation and continuous advance to final
+                    backfilling &mdash; with roadways frequently added, deformed, and removed over time.
+                </figcaption>
+            </figure>
+
+            <div class="method-copy">
+                <p>
+                    The dataset is organized into 46 continuous 3D map sequences covering both stable areas (ore
+                    passes, main haulage roadways) and highly dynamic extraction/backfilling zones across the first
+                    and second sublevels &mdash; capturing the full roadway life cycle from initial excavation to final
+                    backfilling and closure.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ RESULTS ════════════════ -->
+    <section id="results">
+        <div class="container">
+            <h2 class="section-title">Results</h2>
+            <p class="section-subtitle">
+                Incremental map updating and backfill pruning across complex underground scenarios.
+            </p>
+
+            <figure class="figure figure--wide">
+                <img src="overlap-comparison.png" alt="Map update and deletion results under different overlap ratios" loading="lazy">
+                <figcaption class="figure-caption">
+                    Across varying overlap ratios in complex roadways, SGGR maintains precise alignment between the
+                    newly acquired submap (yellow) and the historical map (blue) even under low overlap. DGGN further
+                    identifies and automatically prunes backfilled regions (green dashed circles), keeping the global
+                    map free of obsolete structures.
+                </figcaption>
+            </figure>
+
+            <figure class="figure figure--wide">
+                <img src="methods-comparison.png" alt="Comparison with existing methods on typical underground traffic scenes" loading="lazy">
+                <figcaption class="figure-caption">
+                    Qualitative comparison across typical underground traffic scenes &mdash; cross intersections, curved
+                    roadways, and T-junctions &mdash; shows that our framework consistently achieves clearer geometric
+                    alignment and more stable structure than existing approaches.
+                </figcaption>
+            </figure>
+        </div>
+    </section>
+
+    <!-- ════════════════ BIBTEX ════════════════ -->
+    <section id="bibtex" style="background: var(--bg-alt);">
+        <div class="container">
+            <h2 class="section-title">BibTeX</h2>
+            <!-- ✏️ 引用信息待补充：作者、会议/期刊、年份、arXiv 链接等 -->
+            <div style="position: relative;">
+                <button class="copy-btn" id="copy-bibtex" type="button" aria-label="Copy BibTeX"><i class="fas fa-copy"></i> Copy</button>
+                <div class="bibtex-block"><pre class="bibtex-code" id="bibtex-entry">@inproceedings{dualgated2026,
+      title={Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines},
+      author={Author One and Author Two and Author Three},
+      booktitle={Conference / Journal (TBD)},
+      year={2026},
+}</pre></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ════════════════ FOOTER ════════════════ -->
+    <footer>
+        <div class="container">
+            <p>Template adapted from <a href="https://zju3dv.github.io/scal3r/" target="_blank">Scal3R</a> / <a href="https://nerfies.github.io" target="_blank">Nerfies</a>. Licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.</p>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
