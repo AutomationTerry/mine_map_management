@@ -1,17 +1,17 @@
-# Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines
+# MineLife: Lifelong Map Management for Underground Mining
 
-> Builds, updates, and prunes the underground map in real time as mining trucks operate — **without interrupting normal production**.
+> Lifecycle-based underground mine map management through initialization, incremental updating, and **obsolete structure identification**.
 
-This repository contains the source code, dataset, and project page for our framework on full life-cycle map management in underground mines. It continuously constructs, incrementally updates, and automatically prunes the global map of obsolete (backfilled) roadway structures while mining operations proceed normally.
+This repository contains the source code, dataset, and project page for MineLife, a lifelong map management framework for underground mining. It supports map initialization, incremental updating, and obsolete structure identification throughout evolving mining operations.
 
 **Project page:** [automationterry.github.io/mine_map_management](https://automationterry.github.io/mine_map_management/)
 
 ## Overview
 
-Underground mines lack absolute positioning signals (GPS), so autonomous mining trucks depend on high-precision, continuously updatable maps for perception, path planning, and control. Mine roadways are weakly textured, structurally repetitive, and geometrically sparse, making point-cloud registration prone to pose drift; meanwhile, the cyclic "extraction–backfilling" routine continuously reshapes roadways. We propose a graph-based framework with two complementary components:
+Maps of underground mines need to be continuously updated and maintained as mining operations progress to support reliable equipment localization, path planning, and task scheduling. The lack of absolute positioning references and highly repetitive tunnel structures makes reliable long-term mapping particularly challenging. MineLife performs map management through two complementary processes:
 
-- **SGGR** — *Semantic-Guided Gaussian Registration*: achieves stable short-term incremental mapping in feature-sparse, degraded mining environments.
-- **DGGN** — *Dual-Gated Graph Network*: provides long-term map maintenance by detecting backfilled roadways and dynamically pruning invalid regions.
+- **MSGR** — *Mine Semantic-Guided Registration*: incorporates semantic priors with non-rigid refinement to improve short-term incremental registration in geometrically degenerate mine environments.
+- **DLGN** — *Dual-Gated Lifecycle Graph Network*: evaluates tunnel states through spatial observability and temporal evolution, distinguishing persistent obsolete structures from temporarily unobserved regions.
 
 The dataset is a long-sequence point cloud collection captured at the 1300 sublevel IV stope of the Jinchuan Nickel-Cobalt No. 3 Mining Area over five months (46 continuous 3D map sequences), covering the full roadway life cycle from initial excavation to final backfilling.
 
@@ -34,8 +34,8 @@ The dataset is a long-sequence point cloud collection captured at the 1300 suble
 If you find this work useful, please cite:
 
 ```bibtex
-@inproceedings{dualgated2026,
-  title     = {Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines},
+@inproceedings{minelife2026,
+  title     = {MineLife: Lifelong Map Management for Underground Mining},
   author    = {},
   booktitle = {},
   year      = {2026},

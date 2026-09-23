@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines</title>
-    <meta name="description" content="Official project page for Dual-Gated Semantic Graph Network, a framework for life-cycle map management in underground mines.">
+    <title>MineLife: Lifelong Map Management for Underground Mining</title>
+    <meta name="description" content="Official project page for MineLife, a framework for lifelong map management in underground mining.">
     <meta name="theme-color" content="#2563eb">
 
     <!-- ✏️ 可选：站点图标（当前为地图主题 emoji，可替换为自己的 logo） -->
@@ -12,8 +12,8 @@
 
     <!-- ✏️ 可选：OG / Twitter 分享卡片信息（部署后可填写 og:image 等） -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines">
-    <meta property="og:description" content="Official project page for Dual-Gated Semantic Graph Network.">
+    <meta property="og:title" content="MineLife: Lifelong Map Management for Underground Mining">
+    <meta property="og:description" content="MineLife continuously updates and maintains underground mine maps throughout their lifecycle.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,9 +40,9 @@
                                 <circle cx="24" cy="21" r="2" fill="#ffffff"/>
                             </svg>
                         </span>
-                        <span><span class="highlight">Dual-Gated Semantic Graph Network</span></span>
+                        <span><span class="highlight">MineLife</span></span>
                     </span>
-                    <span class="hero-title-line">for Life-Cycle Map Management in Underground Mines</span>
+                    <span class="hero-title-line">Lifelong Map Management for Underground Mining</span>
                 </h1>
             </div>
 
@@ -79,8 +79,8 @@
 
             <!-- ✏️ 一句话总结（论文核心卖点） -->
             <p class="hero-tagline">
-                Builds, updates, and prunes the underground map in real time as mining trucks operate<br>
-                &mdash; <span class="highlight">without interrupting normal production</span>.
+                Lifecycle-based underground mine map management through initialization, incremental updating,<br>
+                and <span class="highlight">obsolete structure identification</span>.
             </p>
         </div>
     </div>
@@ -96,18 +96,23 @@
             </figure>
 
             <p class="abstract-text">
-                Underground mines lack absolute positioning (GPS), so autonomous mining trucks rely on
-                high-precision, continuously updatable maps. Yet mine roadways are weakly textured, structurally
-                repetitive, and geometrically sparse, making point-cloud registration prone to pose drift and
-                misalignment; meanwhile, the cyclic &ldquo;extraction-backfilling&rdquo; routine continuously reshapes
-                roadways, demanding that invalid or backfilled regions be identified and pruned over time. Existing
-                3D mapping methods target static or short-term environments and require production shutdowns during
-                map acquisition. We instead propose a graph-based framework that <strong>builds, updates, and prunes the
-                map in real time as mining trucks operate &mdash; without interrupting normal production</strong>. For
-                short-term updates, Semantic-Guided Gaussian Registration (SGGR) achieves stable incremental mapping;
-                for long-term maintenance, a Dual-Gated Graph Network (DGGN) detects backfilled roadways and
-                dynamically prunes invalid regions. Experiments demonstrate significantly improved registration
-                stability and long-term consistency in complex, dynamic mining scenarios.
+                Maps of underground mines need to be continuously updated and maintained as mining operations progress
+                to support reliable equipment localization, path planning, and task scheduling. However, the lack of
+                absolute positioning references and highly repetitive tunnel structures make it challenging for
+                conventional mapping methods to maintain reliable maps over extended production periods. A lifelong
+                map management framework, termed MineLife, is proposed to achieve lifecycle-based management of
+                underground mine maps through map initialization, incremental updating, and obsolete structure
+                identification. A temporal point cloud dataset is first established to characterize structural
+                variations throughout different mining stages. Based on this dataset, map management is performed
+                through two complementary processes: short-term map updating and long-term map maintenance. Mine
+                Semantic-Guided Registration (MSGR) incorporates semantic priors with non-rigid refinement to improve
+                incremental registration in geometrically degenerate mine environments. Furthermore, a Dual-Gated
+                Lifecycle Graph Network (DLGN) evaluates tunnel states according to spatial observability and temporal
+                evolution, distinguishing persistent obsolete structures from temporarily unobserved regions.
+                Experiments conducted on a five-month dataset collected from an operating underground mine demonstrate
+                that MineLife enables continuous map updating and maintenance under dynamic mining conditions. The
+                proposed framework provides an effective solution for reliable long-term map management in autonomous
+                underground operations.
             </p>
         </div>
     </section>
@@ -238,10 +243,10 @@
             <figure class="figure figure--wide">
                 <img src="overlap-comparison.png" alt="Map update and deletion results under different overlap ratios" loading="lazy">
                 <figcaption class="figure-caption">
-                    Across varying overlap ratios in complex roadways, SGGR maintains precise alignment between the
-                    newly acquired submap (yellow) and the historical map (blue) even under low overlap. DGGN further
-                    identifies and automatically prunes backfilled regions (green dashed circles), keeping the global
-                    map free of obsolete structures.
+                    Across varying overlap ratios in complex roadways, MSGR maintains precise alignment between the
+                    newly acquired submap (yellow) and the historical map (blue) even under low overlap. DLGN further
+                    identifies persistent obsolete structures while preserving temporarily unobserved regions, keeping
+                    the global map reliable as the mine evolves.
                 </figcaption>
             </figure>
 
@@ -263,8 +268,8 @@
             <!-- ✏️ 引用信息待补充：作者、会议/期刊、年份、arXiv 链接等 -->
             <div style="position: relative;">
                 <button class="copy-btn" id="copy-bibtex" type="button" aria-label="Copy BibTeX"><i class="fas fa-copy"></i> Copy</button>
-                <div class="bibtex-block"><pre class="bibtex-code" id="bibtex-entry">@inproceedings{dualgated2026,
-      title={Dual-Gated Semantic Graph Network for Life-Cycle Map Management in Underground Mines},
+                <div class="bibtex-block"><pre class="bibtex-code" id="bibtex-entry">@inproceedings{minelife2026,
+      title={MineLife: Lifelong Map Management for Underground Mining},
       author={Author One and Author Two and Author Three},
       booktitle={Conference / Journal (TBD)},
       year={2026},
